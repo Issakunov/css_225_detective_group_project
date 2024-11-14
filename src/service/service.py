@@ -25,7 +25,7 @@ class Question:
         self.options = options
 
     def __repr__(self):
-        return f"Question: {self.text}\nOptions: {self.options}"
+        return f"Question: {self.text}"
 
 
 class Scenario:
@@ -37,11 +37,17 @@ class Scenario:
         self.questions = questions
 
     def __repr__(self):
-        return f"Scenario '{self.title}': {self.description}\nQuestions: {self.questions}"
+        return f"Scenario '{self.title}': {self.description}"
+class Character:
+    def __init__(self, id, name, scenario):
+        self.id = id
+        self.name = name
+        self.scenario = scenario
 
+    def __repr__(self):
+        return f"Character '{self.name}"
 
-def main():
-    game_objective = """
+game_objective = """
     As The Oceanic Dream set sail on its 20-day journey across the open sea, excitement buzzed among the passengers. 
     The ship, a floating paradise of luxury, promised adventure, relaxation, and escape. 
     Doctor Arstan, a seasoned physician, was eager to leave behind the pressures of his practice, while Ata Kuba, 
@@ -57,7 +63,7 @@ def main():
 
     # Define and print Kymbatai's scenarios
     # Scenario 1: An Evening in the Sauna
-    chapter1_intro = ChapterIntro(
+chapter1_intro = ChapterIntro(
         """
         Kymbatai, the taxi driver, was lounging on the deck, enjoying a rare moment of peace, 
         when a ship's officer approached her, casting a shadow over her reclined chair.
@@ -76,31 +82,31 @@ def main():
         """
     )
 
-    options_kymbatai_q1_s1 = [
+options_kymbatai_q1_s1 = [
         QuestionOption(2, "I was at the lounge bar, having a drink and chatting with other passengers.", False),
         QuestionOption(3, "I was taking a walk around the ship’s deck, enjoying the sea breeze.", False),
         QuestionOption(1, "I was in the ship’s sauna, relaxing in the steam and letting the warm air soothe me.", True)
     ]
 
-    options_kymbatai_q2_s1 = [
+options_kymbatai_q2_s1 = [
         QuestionOption(4, "I was quietly relaxing and enjoying a smoothie; a few passengers were around, but I didn’t speak with anyone in particular.", True),
         QuestionOption(5, "I met with some friends in the lounge and spent time chatting with them.", False),
         QuestionOption(6, "I went back to my cabin right after my swim and didn’t go to the lounge.", False)
     ]
 
-    options_kymbatai_q3_s1 = [
+options_kymbatai_q3_s1 = [
         QuestionOption(8, "I returned around midnight after spending more time at the lounge.", False),
         QuestionOption(7, "I returned to my cabin around 8:30 p.m., relaxed, and went to bed early, around 10 p.m.", True),
         QuestionOption(9, "I stayed out until about 9:30 p.m. and then went to meet some friends in the crew area.", False)
     ]
 
-    questions_kymbatai_s1 = [
+questions_kymbatai_s1 = [
         Question(1, "Where were you from 5 p.m. to 6 p.m., and what were you doing?", options_kymbatai_q1_s1),
         Question(2, "Did you interact with anyone from 7 p.m. to 8 p.m. in the spa lounge?", options_kymbatai_q2_s1),
         Question(3, "When did you return to your cabin, and what did you do afterward?", options_kymbatai_q3_s1)
     ]
 
-    description_scenario1_kymbatai = """
+description_scenario1_kymbatai = """
     At 5 p.m., Kymbatai decided to relax in the ship’s sauna. The warm, steamy air surrounded her, 
     and she enjoyed the soft sounds of water for about an hour, letting the heat melt away her worries. 
     Afterward, she took a quick swim in the pool to cool off. The refreshing water felt great as she swam a few laps, 
@@ -111,7 +117,7 @@ def main():
     as she thought about her day, feeling thankful for the simple pleasures of the cruise before drifting off to sleep.
     """
     
-    scenario1_kymbatai = Scenario(1, "An Evening in the Sauna", description_scenario1_kymbatai, chapter1_intro, questions_kymbatai_s1)
+scenario1_kymbatai = Scenario(1, "An Evening in the Sauna", description_scenario1_kymbatai, chapter1_intro, questions_kymbatai_s1)
 # Scenario 2: Sunset at Sea
 chapter1_intro = ChapterIntro(
     """
@@ -227,13 +233,7 @@ reflecting on the peaceful experience of the evening. Feeling content, she spent
 
 scenario3_kymbatai = Scenario(3, "A Refreshing Yoga Class", description_scenario3_kymbatai, chapter1_intro, questions_kymbatai_s3)
 
-# Print Kymbatai's scenarios
-print("Kymbatai's Scenario 1:")
-print(scenario1_kymbatai)
-print("Kymbatai's Scenario 2:")
-print(scenario2_kymbatai)
-print("Kymbatai's Scenario 3:")
-print(scenario3_kymbatai)
+scenario_list_kymbatai = [scenario1_kymbatai, scenario2_kymbatai]
 
 # Scenario 1: A Quiet Evening of Preparation
 chapter2_intro = ChapterIntro(
@@ -411,12 +411,7 @@ scenario3_arstan = Scenario(3, "Socializing with Passengers", description_scenar
 
 # Print Dr. Arstan's scenarios
 
-print("Dr. Arstan's Scenario 1:")
-print(scenario1_arstan)
-print("Dr. Arstan's Scenario 2:")
-print(scenario2_arstan)
-print("Dr. Arstan's Scenario 3:")
-print(scenario3_arstan)
+scenario_list_arstan = [scenario1_arstan, scenario2_arstan, scenario3_arstan]
 
 # Scenario 1: A Quiet Night Alone
 chapter3_intro = ChapterIntro(
@@ -599,13 +594,7 @@ him the entire evening, as he remained in isolated parts of the ship.
 
 scenario3_kuba = Scenario(3, "A Private Practice Session", description_scenario3_kuba, chapter3_intro, questions_kuba_s3)
 
-# Print Ata Kuba's scenarios
-print("Ata Kuba's Scenario 1:")
-print(scenario1_kuba)
-print("Ata Kuba's Scenario 2:")
-print(scenario2_kuba)
-print("Ata Kuba's Scenario 3:")
-print(scenario3_kuba)
+scenario_list_kuba = [scenario1_kuba, scenario2_kuba, scenario3_kuba]
 
 # Scenario 1: A Night of Reading and Reflection
 chapter4_intro = ChapterIntro(
@@ -803,13 +792,7 @@ No one saw him during this time, as he stayed in his cabin for most of the night
 
 scenario3_kadyrbek = Scenario(3, "A Private Writing Session", description_scenario3_kadyrbek, chapter4_intro, questions_kadyrbek_s3)
 
-# Print Mr. Kadyrbek's scenarios s
-print("Mr. Kadyrbek's Scenario 1:")
-print(scenario1_kadyrbek)
-print("Mr. Kadyrbek's Scenario 2:")
-print(scenario2_kadyrbek)
-print("Mr. Kadyrbek's Scenario 3:")
-print(scenario3_kadyrbek)
+scenario_list_kadyrbek = [scenario1_kadyrbek, scenario2_kadyrbek, scenario3_kadyrbek]
 
 
 

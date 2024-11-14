@@ -9,7 +9,7 @@ chapters = {
     4: Chapter4
 }
 
-def play_game():
+def main():
     # Step 1: Player selects a chapter
     print(service.game_objective)
     print("Choose a chapter (1-4):")
@@ -57,4 +57,4 @@ def play_game():
         print("\nSorry, you lost this scenario. Better luck next time!")
 
 # Run the game
-play_game()
+main()
