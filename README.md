@@ -25,8 +25,9 @@ o	scenarios/: Defines scenarios and alibis for each character’s storyline.
 o	game_manager.py: Controls gameplay flow, manages character selection, and directs the narrative.
 o	main.py: Entry point, initializing game settings and managing the main game loop.
 •	Character Structure: Each character has unique chapters and scenarios with specific questions that contribute to the game’s investigation and storyline.
+
  ![example image](assets/Flowchart.png)
-6. Starting the Game
+7. Starting the Game
 1.	Character Selection: At the beginning of each game session, players select one of four available characters: Arstan (doctor), Kymbatai (taxi driver), Ata (singer), or Kadyrbek (high school teacher).
 2.	Game Flow: After character selection the player need to read the randomly chosen scenario and be ready to respond to investigative questions. Each scenario advances based on player responses, leading to a conclusion.
 3.	Restarting the Game: To replay with a different character, the game must be restarted from the beginning.
