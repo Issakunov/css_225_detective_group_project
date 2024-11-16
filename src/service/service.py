@@ -37,15 +37,18 @@ class Scenario:
         self.questions = questions
 
     def __repr__(self):
-        return f"Scenario '{self.title}': {self.description}"
+        return f"Scenario '{self.title}'"
+
+
 class Character:
-    def __init__(self, id, name, scenario):
+    def __init__(self, id, name, scenario, title):
         self.id = id
         self.name = name
         self.scenario = scenario
+        self.title = title
 
     def __repr__(self):
-        return f"Character '{self.name}"
+        return f"Character: id = {self.id}, name = {self.name}, title = {self.title}"
 
 game_objective = """
     As The Oceanic Dream set sail on its 20-day journey across the open sea, excitement buzzed among the passengers. 
@@ -795,6 +798,5 @@ scenario3_kadyrbek = Scenario(3, "A Private Writing Session", description_scenar
 scenario_list_kadyrbek = [scenario1_kadyrbek, scenario2_kadyrbek, scenario3_kadyrbek]
 
 
+character_list = [Character(1, "kymbatai", scenario_list_kymbatai, "Taxi Driver"), Character(2, "arstan", scenario_list_arstan, "Doctor"), Character(3, "kuba", scenario_list_kuba, "Singer"), Character(4, "kadyrbek", scenario_list_kadyrbek, "Teacher")]
 
-
-   
