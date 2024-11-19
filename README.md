@@ -8,16 +8,18 @@
 •	Supported Operating Systems: Windows, macOS, Linux
 •	Python Version: Python 3.8 or later
 •	Required Dependencies: Libraries specified in requirements.txt
-4. Building, Running, and Deploying the Game
-•	Installation of Dependencies:
-bash
-Copy code
-pip install -r requirements.txt
-•	Running the Game.     :
-bash
-Copy code
-python main.py
-This command starts the game from the main entry point (main.py), initializing character selection and the game’s main loop.
+4. Running instructions
+Game Objective
+The game starts by displaying its objective and the list of available characters.
+
+Character Selection
+Players select a character by entering their ID, which maps to specific scenarios. Each character's scenario is chosen randomly.
+
+Scenario and Questions
+The game presents a detailed scenario and asks questions. Players must select answers by inputting option IDs.
+
+Result Evaluation
+Based on correct answers, players receive feedback and a final result reflecting their performance. 
 5. Architecture Overview
 •	Modules and Structure:
 o	characters/: Contains separate classes or modules for each character (Arstan, Kymbatai, Ata, and Kadyrbek), along with their unique scenarios.                                        
